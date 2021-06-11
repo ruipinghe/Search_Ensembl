@@ -1,0 +1,18 @@
+
+{% extends "homelink/base.html" %}
+
+{% block content %}
+
+<h3>爬取上海链家二手房信息</h3>
+<form method="POST" class="form-horizontal" role='form' action="{% url 'homelink:house_spider' %}">
+  {% csrf_token %}
+  {{ form.as_p }}
+   <div class="form-group">
+       <div class="col-md-12">
+  <button type="submit" class="btn btn-primary form-control">开始爬取</button>
+       </div>
+   </div>
+</form>
+
+
+{% endblock %}
