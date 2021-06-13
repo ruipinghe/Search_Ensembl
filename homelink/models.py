@@ -11,7 +11,7 @@ class HouseInfo(models.Model):
         return "{}-{}".format(self.dbname,self.dbtype)
 
     class Meta:
-        verbose_name = "二手房"
+        verbose_name = "datbase"
 
 
 
