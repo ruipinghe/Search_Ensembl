@@ -1,12 +1,8 @@
 from django.shortcuts import render
 from .forms import HouseChoiceForm
 from django.http import HttpResponseRedirect
-
-
 from fake_useragent import UserAgent
 import requests
-
-
 import mysql.connector
 
 
@@ -14,11 +10,8 @@ import mysql.connector
 # Create your views here.
 
 def search_data(request):
-    """定义页面的展示格式，表格+分页"""
     form = HouseChoiceForm()
-
     return render(request, 'homelink/index.html', {'form': form, })
-
 
 
 def search_result(request):
@@ -42,7 +35,6 @@ def data_query(species, dbtype, release):
         sql = "select dbname,type from genome_database where dbname LIKE" + " '"+ species + "%\_" + str(release) + "\_%'" + " ;" 
     else:
         sql = "select dbname,type from genome_database where dbname LIKE" + " '"+ species + "%\_" + str(release) + "\_%'" + " and type = " + "'"+str(dbtype)+"'" + " ;" 
-
     cursor = cnx.cursor()
     cursor.execute(sql)
     cresults = cursor.fetchall()
