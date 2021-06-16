@@ -3,7 +3,7 @@
 
 {% block content %}
 
-<h3>Get Species Databases</h3>
+<h3>Search Ensembl</h3>
 <form method="POST" class="form-horizontal" role='form' action="{% url 'homelink:search_result' %}">
   {% csrf_token %}
   {{ form.as_p }}
@@ -38,13 +38,13 @@
 </table>
 
 {% else %}
-{# 注释: 这里可以换成自己的对象 #}
+
 
 
 {% endif %}
 
 
-{# 注释: 下面代码实现分页 #}
+
 {% if is_paginated %}
      <ul class="pagination">
     {% if page_obj.has_previous %}
