@@ -13,4 +13,3 @@ python manage.py migrate --fake-initial
 
 python manage.py runserver
 
-
