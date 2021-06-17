@@ -3,7 +3,7 @@
 
 {% block content %}
 
-<h3>Search Ensembl</h3>
+<h3>Search_Ensembl</h3>
 <form method="POST" class="form-horizontal" role='form' action="{% url 'homelink:search_result' %}">
   {% csrf_token %}
   {{ form.as_p }}
